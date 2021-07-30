@@ -27,7 +27,7 @@ SECRET_KEY = 'aj#b7j91r4(ez%c-ryoohsbv$v**$wdx@pnt3@vxtvu%yo2(&g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','myeco-mmerce.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

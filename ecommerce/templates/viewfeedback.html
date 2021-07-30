@@ -1,0 +1,149 @@
+{% extends 'userpanel.html' %}
+{% block content %}
+{% load static %}
+{% include "messages.html" %}
+<center>
+  <h1 style="font-family: 'Tangerine', serif;">Product Feedbacks</h1>
+
+</center>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.card-img-top {
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+}
+#tbl{
+  font-family: 'Tangerine', serif;
+    font-size: 28px;
+    border:none;
+    width:825px;
+
+}
+
+#img{
+  width:20%;
+  height:20%;
+}
+
+
+</style>
+<br><br>
+
+<form method="post">
+<center>
+    <td>
+        {% if product_data.images %}
+            <img src="{{  product_data.images.url }}"  class="card-img-top"  >
+
+        {% endif %}
+    </td>
+
+<table style="width:70%" id="tbl">
+
+    <th>Product Name</th>
+    <th>Product Category</th>
+    <th>FeedBack</th>
+    <th>Seller</th>
+
+  </tr>
+  {% for obj in data %}
+
+
+    <tbody style="text-align:center" id="tb" >
+  <tr>
+
+      <td>{{ obj.product.product_name }}</td>
+      <td>{{ obj.product.product_category }}</td>
+      <td>{{ obj.feedback_text }}</td>
+      <td>{{ obj.product.created_by.username }}</td>
+
+
+{#     <!-- <td><input type="text" name="qty" value="1" style="width: 40px" /></td>-->#}
+{#      <td><a href="{% url 'remove_quantity' id=obj.id %}">-</a>{{obj.quantity }}<a href="{% url 'add_quantity' id=obj.id %}">+</a> </td>#}
+{#      <td>{{ obj.price }}</td>#}
+{#      <td style="text-align:center"><a href="{% url 'delete_cart' id=obj.id %}" onclick="return confirm('Are you sure you want to Remove this item from cart?');">❌</a> </td>#}
+{##}
+{##}
+
+  </tr>
+
+
+    </tbody>
+
+      {% endfor %}
+{#     <tr>#}
+{#         <td align="center" colspan="3">#}
+{#             Total amount#}
+{#         </td>#}
+{#        <td colspan="3" align="center">#}
+{#            <hi>{{amount_data.amount}}</hi>#}
+{#        </td>#}
+{#         {% if amount_data.amount != 0 %}#}
+{#         <td align="center">#}
+{#             <a href="{% url 'paymentform' %}" ><button type="button">Pay</button></a>#}
+{##}
+{#         </td>#}
+{#         {% endif %}#}
+{#    </tr>#}
+
+
+</table>
+
+
+</ul>
+</nav>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'rokanthemes/verticalmenu'
+    ], function ($) {
+        $(".verticalmenu").VerticalMenu();
+		$('.cms-index-index .navigation.verticalmenu .togge-menu').show();
+		$('.title-category-dropdown').click(function(event){
+			$('.navigation.verticalmenu .togge-menu').slideToggle('slow');
+			$(this).toggleClass('active');
+		});
+		$( document ).ready(function() {
+			var lenghtLi = $('.cms-index-index .navigation.verticalmenu .ui-menu-item.level0').length;
+			var limitItemShow = 10;
+			if(lenghtLi > limitItemShow)
+			{
+				$('.navigation.verticalmenu .ui-menu-item.level0').each(function( index ) {
+					if(index >= (limitItemShow - 1))
+					{
+						$(this).addClass('orther-link');
+						$(this).hide();
+					}
+				});
+				$('.navigation.verticalmenu .expand-category-link').show();
+				$('.navigation.verticalmenu .expand-category-link').on( "click", function() {
+					$(this).toggleClass('expanding');
+					$('.navigation.verticalmenu .ui-menu-item.level0.orther-link').slideToggle('slow');
+				});
+			}
+		});
+    });
+</script>
+</div>
+</center>
+</form>
+
+
+{% endblock content%}

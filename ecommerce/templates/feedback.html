@@ -1,0 +1,116 @@
+{% extends 'userpanel.html' %}
+{% block content %}
+{% load static %}
+{% include "messages.html" %}
+    {%load crispy_forms_tags %}
+<center>
+  <h1 style="font-family: 'Tangerine', serif;">You'r Shopping Cart</h1>
+
+</center>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.card-img-top {
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+}
+#tbl{
+  font-family: 'Tangerine', serif;
+    font-size: 28px;
+    border:none;
+    width:825px;
+
+}
+
+#img{
+  width:20%;
+  height:20%;
+}
+
+
+</style>
+<br><br>
+
+<form method="post">
+<center>
+
+<div class="card" style="width: 18rem;" >
+  <div class="card-header">
+{#    Delivery address#}
+{#  </div>#}
+{#  <ul class="list-group list-group-flush" >#}
+{##}
+{#    <li class="list-group-item">Name:&nbsp;&nbsp;{{address.d_name}}</li>#}
+{#    <li class="list-group-item">Mobile:&nbsp;&nbsp;{{address.d_phone_number}}</li>#}
+{#    <li class="list-group-item">District:&nbsp;&nbsp;{{address.d_district}}</li>#}
+{#    <li class="list-group-item">Pincode:&nbsp;&nbsp;{{address.d_pincode}}</li>#}
+{#    <li class="list-group-item">Address:&nbsp;&nbsp;{{address.d_address}}</li>#}
+{#    <li class="list-group-item">Pickup Time:&nbsp;&nbsp;{{address.d_pickup_time}}</li>#}
+{#    <li class="list-group-item"><a href="{% url 'manage_address'%}">Change</a></li>#}
+{##}
+{#  </ul>#}
+      <form method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="submit" onclick="return confirm('Confirm Your Feedback Submission');" >Submit</button>
+          <button type="reset" onclick="return confirm('Are you sure to Clear your Feedback');">Clear</button>
+
+      </form>
+</div>
+
+</ul>
+</nav>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'rokanthemes/verticalmenu'
+    ], function ($) {
+        $(".verticalmenu").VerticalMenu();
+		$('.cms-index-index .navigation.verticalmenu .togge-menu').show();
+		$('.title-category-dropdown').click(function(event){
+			$('.navigation.verticalmenu .togge-menu').slideToggle('slow');
+			$(this).toggleClass('active');
+		});
+		$( document ).ready(function() {
+			var lenghtLi = $('.cms-index-index .navigation.verticalmenu .ui-menu-item.level0').length;
+			var limitItemShow = 10;
+			if(lenghtLi > limitItemShow)
+			{
+				$('.navigation.verticalmenu .ui-menu-item.level0').each(function( index ) {
+					if(index >= (limitItemShow - 1))
+					{
+						$(this).addClass('orther-link');
+						$(this).hide();
+					}
+				});
+				$('.navigation.verticalmenu .expand-category-link').show();
+				$('.navigation.verticalmenu .expand-category-link').on( "click", function() {
+					$(this).toggleClass('expanding');
+					$('.navigation.verticalmenu .ui-menu-item.level0.orther-link').slideToggle('slow');
+				});
+			}
+		});
+    });
+</script>
+</div>
+</center>
+</form>
+
+
+{% endblock content%}

@@ -1,0 +1,74 @@
+{% extends 'userpanel.html' %}
+{% block content %}
+{% load static %}
+{% include "messages.html" %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.card-img-top {
+    width: 100%;
+    height: 14vw;
+    object-fit: cover;
+}
+.card{
+    border: none;
+}
+</style>
+
+<div class="row">
+    {% for obj in obj_list %}
+    {% if obj.product_category == type %}
+        {% if obj.created_by.username != user_data  %}
+        {% if obj.created_by.is_active %}
+<div class="col-md-3 grid-margin">
+
+<div class="card-group">
+  <div class="card" align="center">
+      <div class="zoom">
+           {% if obj.images %}
+          <img src="{{  obj.images.url }}"  class="card-img-top" >
+
+
+           {% endif %}
+
+          </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ obj.product_name}}</h5>
+      <p class="card-text">{{ obj.details }}</p>
+      <p class="card-text"><small class="text-muted">Price/Kg:{{obj.price}}</small></p>
+        <div align="center">
+            <a href="{% url 'add_to_cart' id=obj.id %}"><button  >add</button></a>
+
+
+        </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+    <br>
+    <br>
+        {% endif %}
+        {% endif %}
+    {% endif %}
+    {% endfor %}
+    <br>
+</div>
+
+{% endblock content%}

@@ -1,0 +1,166 @@
+{% extends 'userpanel.html' %}
+{% block content %}
+{% load static %}
+{% include "messages.html" %}
+<center>
+  <h1 style="font-family: 'Tangerine', serif;">Placed Orders</h1>
+
+</center>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.card-img-top {
+    width: 10vw;
+    height: 10vw;
+    object-fit: cover;
+}
+#tbl{
+  font-family: 'Tangerine', serif;
+    font-size: 28px;
+    border:none;
+    width:825px;
+
+}
+
+#img{
+  width:20%;
+  height:20%;
+}
+
+
+</style>
+<br><br>
+
+<form method="post">
+<center>
+<table style="width:70%" id="tbl">
+    <td></td>
+    <th>Product Name</th>
+    <th>Product Category</th>
+    <th>Price</th>
+    <th>Qty</th>
+    <th>Subtotal</th>
+    <th>Action</th>
+  </tr>
+{% for a in data %}
+{{ a.pay_id }}
+{{ a.order_id }}
+{% endfor %}
+  {% for obj in data %}
+
+
+    <tbody style="text-align:center" id="tb" >
+  <tr>
+      <td>
+       {% if obj.images %}
+          <img src="{{  obj.images.url }}"  class="card-img-top"  >
+
+           {% endif %}
+      </td>
+
+      <td>{{ obj.product_name }}</td>
+      <td>{{ obj.product_category }}</td>
+      <td>{{ obj.price_base }}</td>
+     <!-- <td><input type="text" name="qty" value="1" style="width: 40px" /></td>-->
+      <td>{{obj.quantity }} </td>
+      <td>{{ obj.price }}</td>
+      <td style="text-align:center">  <a href="{% url 'orderdetailsview' id=obj.id%}" ><button type="button">View</button></a>
+          </a> </td>
+
+
+
+  </tr>
+
+
+    </tbody>
+
+      {% endfor %}
+{#     <tr>#}
+{#         <td align="center" colspan="3">#}
+{#             Total amount#}
+{#         </td>#}
+{#        <td colspan="3" align="center">#}
+{#            <hi>{{amount_data.amount}}</hi>#}
+{#        </td>#}
+{#         {% if amount_data.amount != 0 %}#}
+{#         <td align="center">#}
+{#             <a href="{% url 'paymentform'%}" ><button type="button">Pay</button></a>#}
+{##}
+{#         </td>#}
+{#         {% endif %}#}
+{#    </tr>#}
+
+
+</table>
+{#<div class="card" style="width: 18rem;" >#}
+{#  <div class="card-header">#}
+{#    Delivery address#}
+{#  </div>#}
+{#  <ul class="list-group list-group-flush" >#}
+{##}
+{#    <li class="list-group-item">Name:&nbsp;&nbsp;{{address.d_name}}</li>#}
+{#    <li class="list-group-item">Mobile:&nbsp;&nbsp;{{address.d_phone_number}}</li>#}
+{#    <li class="list-group-item">District:&nbsp;&nbsp;{{address.d_district}}</li>#}
+{#    <li class="list-group-item">Pincode:&nbsp;&nbsp;{{address.d_pincode}}</li>#}
+{#    <li class="list-group-item">Address:&nbsp;&nbsp;{{address.d_address}}</li>#}
+{#    <li class="list-group-item">Pickup Time:&nbsp;&nbsp;{{address.d_pickup_time}}</li>#}
+{#    <li class="list-group-item"><a href="{% url 'manage_address'%}">Change</a></li>#}
+{##}
+{#  </ul>#}
+{#</div>#}
+
+</ul>
+</nav>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'rokanthemes/verticalmenu'
+    ], function ($) {
+        $(".verticalmenu").VerticalMenu();
+		$('.cms-index-index .navigation.verticalmenu .togge-menu').show();
+		$('.title-category-dropdown').click(function(event){
+			$('.navigation.verticalmenu .togge-menu').slideToggle('slow');
+			$(this).toggleClass('active');
+		});
+		$( document ).ready(function() {
+			var lenghtLi = $('.cms-index-index .navigation.verticalmenu .ui-menu-item.level0').length;
+			var limitItemShow = 10;
+			if(lenghtLi > limitItemShow)
+			{
+				$('.navigation.verticalmenu .ui-menu-item.level0').each(function( index ) {
+					if(index >= (limitItemShow - 1))
+					{
+						$(this).addClass('orther-link');
+						$(this).hide();
+					}
+				});
+				$('.navigation.verticalmenu .expand-category-link').show();
+				$('.navigation.verticalmenu .expand-category-link').on( "click", function() {
+					$(this).toggleClass('expanding');
+					$('.navigation.verticalmenu .ui-menu-item.level0.orther-link').slideToggle('slow');
+				});
+			}
+		});
+    });
+</script>
+</div>
+</center>
+</form>
+
+
+{% endblock content%}

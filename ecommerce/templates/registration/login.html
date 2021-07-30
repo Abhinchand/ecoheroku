@@ -1,0 +1,706 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<!-- Mirrored from blueskytechmage.com/ecofarm/en/customer/account/login/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Dec 2020 05:27:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<script>
+    var BASE_URL = 'http.html\u003A\u002F\u002Fblueskytechmage.com\u002Fecofarm\u002Fen\u002F';
+    var require = {
+        'baseUrl': 'http\u003A\u002F\u002Fblueskytechmage.com\u002Fecofarm\u002Fpub\u002Fstatic\u002Fversion1606463929\u002Ffrontend\u002Fbs_ecofarm\u002Fbs_ecofarm1\u002Fen_US'
+    };</script> <meta charset="utf-8" />
+<meta name="title" content="Customer Login" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>Customer Login</title>
+<link rel="stylesheet" type="text/css" media="all" href="{% static 'base/css/fb551c10d9938507d76c5280da5a48d3.min.css' %}" />
+<link rel="stylesheet" type="text/css" media="print" href="{% static 'base/css/print.min.css' %}" />
+<link rel="icon" type="image/x-icon" href="{% static 'base/icon/favicon.ico '%}" />
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'base/icon/favicon.ico '%}" />
+<script type="text/javascript" src="{% static 'base/js/27394900d3ad3c8c678b8a8f490a3d6c.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Lobster+Two:400,400i,700,700i&amp;amp;display=swap" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700" media="all" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" media="all" href="{% static 'base/css/custom_en7c84.css?v=1608528148' %}" />
+<style type="text/css">
+	#loading-fixed{ background-color: #bbbbbb; height: 100%; width: 100%; position: fixed; z-index: 999999; margin-top: 0px; top: 0px; } #loading-center-fixed{ width: 100%; height: 100%; position: relative; } #loading-center-absolute-fixed { position: absolute; left: 50%; top: 50%; height: 200px; width: 200px; margin-top: -100px; margin-left: -100px; -ms-transform: rotate(-135deg); -webkit-transform: rotate(-135deg); transform: rotate(-135deg); } .object-fixed{ -moz-border-radius: 50% 50% 50% 50%; -webkit-border-radius: 50% 50% 50% 50%; border-radius: 50% 50% 50% 50%; position: absolute; border-top: 5px solid #FFF; border-bottom: 5px solid transparent; border-left: 5px solid #FFF; border-right: 5px solid transparent; -webkit-animation: animate 2s infinite; animation: animate 2s infinite; } #object_one{ left: 75px; top: 75px; width: 50px; height: 50px; } #object_two{ left: 65px; top: 65px; width: 70px; height: 70px; -webkit-animation-delay: 0.2s; animation-delay: 0.2s; } #object_three{ left: 55px; top: 55px; width: 90px; height: 90px; -webkit-animation-delay: 0.4s; animation-delay: 0.4s; } #object_four{ left: 45px; top: 45px; width: 110px; height: 110px; -webkit-animation-delay: 0.6s; animation-delay: 0.6s; } @-webkit-keyframes animate { 50% { -ms-transform: rotate(360deg) scale(0.8); -webkit-transform: rotate(360deg) scale(0.8); transform: rotate(360deg) scale(0.8); } } @keyframes animate { 50% { -ms-transform: rotate(360deg) scale(0.8); -webkit-transform: rotate(360deg) scale(0.8); transform: rotate(360deg) scale(0.8); } }
+</style>
+<style type="text/css">
+	.products-grid.wishlist .product-item-actions .actions-primary button.tocart {
+		display: block;
+	    width: 100%;
+	}
+	.products-grid.wishlist .product-item .actions-primary {
+		opacity: 0;
+	    visibility: hidden;
+		top: 150px;
+	    padding-top: 0;
+
+	}
+	.products-grid.wishlist .product-item:hover .actions-primary {
+	    z-index: 99;
+	    opacity: 1;
+	    visibility: visible;
+	}
+
+	.block.newsletter .field.newsletter {
+	    max-width: 100%;
+	}
+	.catalog-product_compare-index .table th {
+		display: table-cell;
+		border-radius: 0 !important;
+		border-bottom: 1px solid #e6e6e6 !important;
+	}
+	.catalog-product_compare-index .table-comparison .cell {
+		width: 240px;
+	}
+	.catalog-product_compare-index table.comparison.headings {
+		display: none;
+	}
+	.table:not(.cart):not(.totals)>thead>tr>th, .table:not(.cart):not(.totals)>tbody>tr>th, .table:not(.cart):not(.totals)>tfoot>tr>th, .table:not(.cart):not(.totals)>thead>tr>td, .table:not(.cart):not(.totals)>tbody>tr>td, .table:not(.cart):not(.totals)>tfoot>tr>td {
+		border: 1px solid #e6e6e6;
+	}
+	.section-newsletter .field.newsletter .control .content-subscribe #newsletter-error {
+		color: #e02b27;
+	}
+	@media (max-width: 767px) {
+		.nav-before-open .page-wrapper {overflow: initial;}
+
+		.menu_left_home1 .nav-sections {
+		    display: block;
+		}
+		.header-container .header .block-search {
+		    float: none;
+		    position: relative;
+		    display: block;
+		    width: auto;
+		    margin-left: 0;
+		    margin-bottom: 0;
+		    padding: 0 30px;
+		}
+
+	}
+	.verticalmenu.navigation.side-verticalmenu>ul li.level0 .level0.submenu {
+		border: none;
+		box-shadow: none;
+	}
+	.verticalmenu.navigation.side-verticalmenu ul.togge-menu li.level0 .level0.submenu li .open-children-toggle {
+	    right: 30px;
+	    font-size: 20px;
+	    top: -2px;
+	}
+</style>
+</head>
+<body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://blueskytechmage.com/ecofarm/pub/static/version1606463929/frontend/bs_ecofarm/bs_ecofarm1/en_US/images/loader-2.gif"}}' class="organix-page-preloader customer-account-login page-layout-1column">
+<script>
+    window.logoUrl ="{% static 'images/logo_h8.png' %}";
+</script>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "rokanthemes/ajaxsuite"    : {
+                "loginUrl": "http://blueskytechmage.com/ecofarm/en/customer/account/login/",
+                "customerId": "",
+                "ajaxCart" : {
+                    "enabled" : 1,
+                    "actionAfterSuccess" : "popup"
+                },
+                "ajaxWishList" : {
+                    "enabled" : 1,
+                    "WishlistUrl": "http://blueskytechmage.com/ecofarm/en/ajaxsuite/wishlist/add/"
+                },
+                "ajaxCompare" : {
+                    "enabled" : 1,
+                    "CompareUrl": "http://blueskytechmage.com/ecofarm/en/ajaxsuite/compare/add/"
+                }
+            }
+    }
+}
+</script>
+<div id="cookie-status">
+The store will not work correctly in the case when cookies are disabled.</div>
+<script type="text&#x2F;javascript">document.querySelector("#cookie-status").style.display = "none";</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "cookieStatus": {}
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mage/cookies": {
+                "expires": null,
+                "path": "\u002Fecofarm",
+                "domain": ".blueskytechmage.com",
+                "secure": false,
+                "lifetime": "3600"
+            }
+        }
+    }
+</script>
+<noscript>
+        <div class="message global noscript">
+            <div class="content">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong>
+                    <span>
+                        For the best experience on our site, be sure to turn on Javascript in your browser.                    </span>
+                </p>
+            </div>
+        </div>
+    </noscript>
+<script>true</script><script>    require.config({
+        map: {
+            '*': {
+                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter'
+            }
+        }
+    });</script>
+<div class="line-scale-pulse-out hide">
+<div class="hide"></div>
+<div class="hide"></div>
+<div class="hide"></div>
+<div class="hide"></div>
+<div class="hide"></div>
+</div>
+<script type="text/javascript">
+require([
+		'jquery'
+	], function ($) {
+		'use strict';
+		$(window).load(function() {
+			$('#loading-fixed').delay(500).fadeOut('slow');
+		});
+		$( document ).ready(function() {
+			var myVarloader = setInterval(function(){ setLoaderTime() }, 1000);
+			function setLoaderTime() {
+				$('#loading-fixed').delay(500).fadeOut('slow');
+				clearInterval(myVarloader);
+			}
+		});
+});
+</script>
+<style>
+.line-scale-pulse-out{
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999999;
+    margin-top: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	  display: -ms-flexbox;      /* TWEENER - IE 10 */
+	  display: -webkit-flex;     /* NEW - Chrome */
+	  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+</style><div id="newsletter_pop_up" class="newsletterpopup">
+<a href="javascript: void(0);" class="btn-close newletter_popup_close"><span class="lnr lnr-cross"></span></a>
+<div class="row">
+<div class="col-sm-5 hidden-xs col-img">
+<div class="col-img-bg-pupup"></div>
+</div>
+<div class="col-sm-7 col-xs-12 col-content pull-right">
+<div class="content-popup"><h2>Get Our Email Letter</h2>
+<p>Subscribe to the <span>Ecofarm</span> mailing list to receive special offers and other discount information.</p> <form class="form subscribe" novalidate action="http://blueskytechmage.com/ecofarm/en/newsletter/subscriber/new/" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-popup">
+<div class="field newsletter">
+<div class="control">
+<input name="email" type="email" id="newsletter-popup" placeholder="Enter your email address" data-validate="{required:true, 'validate-email':true}" />
+</div>
+</div>
+<div class="actions">
+<button class="action subscribe primary" title="Subscribe" type="submit">
+<span>Subscribe</span>
+</button>
+</div>
+<div class="subscribe-bottom">
+<input type="checkbox" id="newsletter_popup_dont_show_again">
+<label for="newsletter_popup_dont_show_again">Do not show this popup again</label>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+require(["jquery"], function($){
+	function setCookie(name,value,days)
+	{
+	  if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		  }
+		  else var expires = "";
+		  document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function getCookie(name)
+	{
+		  var nameEQ = name + "=";
+		  var ca = document.cookie.split(';');
+		  for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		  }
+		  return null;
+	}
+	$(document).ready(function(){
+		        if($("body").hasClass("cms-index-index")) {
+					if(getCookie("shownewsletter") != 1){
+				var height_window = $(window).height();
+				var height_pupup = 400;
+				var fixed_height = (height_window - height_pupup) / 2;
+				var pPopup = $('#newsletter_pop_up').bPopup({
+					position:['auto',fixed_height],
+					speed: 500,
+					transition: 'slideDown',
+					onClose: function() {
+					}
+				});
+				$('.newletter_popup_close').on('click', function(){
+					pPopup.close();
+				});
+			}
+
+			$( "#newsletter_pop_up form" ).submit(function( event ) {
+				setCookie("shownewsletter",'1',1);
+			});
+
+			$('#newsletter_popup_dont_show_again').on('change', function(){
+				if(getCookie("shownewsletter") != 1){
+					setCookie("shownewsletter",'1',1)
+				}else{
+					setCookie("shownewsletter",'0',1)
+				}
+			});
+		        }
+			});
+ });
+</script>
+<div class="page-wrapper"><div class="header-container">
+<div class="header">
+<div class="top-header">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-6 text-left contact-header-left">
+<ul class="header_links">
+</ul> </div>
+<div class="col-xs-12 col-sm-6 col-md-6">
+<div class="text-right contact-header-right">
+    <!--
+<div class="register-login">
+<a href="index.html">
+<i class="icon-users2 lnr lnr-user"></i>
+<div class="txt-login hidden-sm">
+<strong>Login</strong> or <span>
+<strong>Register</strong></span>
+</div>
+</a>
+</div>
+-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="header_container head-logo">
+<div class="header container header_top">
+<div class="row">
+<div class="col-md-3 col-xs-12">
+<div class="col-logo"><span data-action="toggle-nav" class="action nav-toggle"><span>Toggle Nav</span></span>
+<a class="logo" href="{% url 'index' %}" title="Ecofarm" aria-label="store logo">
+<img src="{% static 'images/logo_header.png' %}" title="Ecofarm" alt="Ecofarm" width="233" height="108" />
+</a>
+</div>
+</div>
+<div class="col-md-9 col-xs-12">
+<div class="header_nav_container">
+<div class="hotline-email">
+<div class="telephone"> (+91) 0000 000 000 </div>
+    <div class="email"> sample@gmail.com </div>
+
+</div>
+<div class="minicart-wrapper"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="top-nav">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-xs-6 col-sm-3 menu_left_home1">
+<div class="sections nav-sections">
+<div id="close-menu" class="visible-xs"><a href="#"><i class="lnr lnr-cross"></i></a></div>
+<div class="search-mobile visible-xs"><div class="block block-search">
+<div class="block block-content">
+<div class="dropdown">
+<div class="dropdown-toggle">
+<div class="top-search">
+<i class="icon-search lnr lnr-magnifier"></i>
+<span class="text">Search</span>
+</div>
+</div>
+<form class="form minisearch dropdown-menu search-content" id="search_mini_form-mobile" action="http://blueskytechmage.com/ecofarm/en/catalogsearch/result/" method="get">
+<div class="field search">
+<label class="label" for="search" data-role="minisearch-label">
+<span>Search</span>
+</label>
+<div class="control">
+<input id="search_mobile" data-mage-init='{"quickSearch":{
+                                "formSelector":"#search_mini_form-mobile",
+                                "url":"http://blueskytechmage.com/ecofarm/en/search/ajax/suggest/",
+                                "destinationSelector":"#search_autocomplete_mobile"}
+                           }' type="text" name="q" value="" placeholder="Search products" class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" />
+<div id="search_autocomplete_mobile" class="search-autocomplete"></div>
+</div>
+</div>
+<div class="actions">
+<button type="submit" title="Search" class="action search">
+<span>Search</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="section-items nav-sections-items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+<div class="section-item-title nav-sections-item-title" data-role="collapsible">
+<a class="nav-sections-item-switch" data-toggle="switch" href="#menu.vertical"></a>
+</div>
+</div>
+<div class="mobile-action">
+<div class="register-login visible-xs">
+<a href="index.html">Log in<i class="lnr lnr-user"></i></a>
+</div>
+<div class="wishlist visible-xs">
+<a href="{% url 'login' %}">Wishlist<i class="lnr lnr-heart"></i></a>
+</div>
+</div>
+</div>
+<div class="logo-sticky"><a href="../../../index.html" title="Logo"><img src="../../../../pub/media/rokanthemes/stickylogo/default/logo_header.png" alt="Logo" /></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    require(['jquery'],function($){
+        $(document).ready(function($){
+			$(window).scroll(function() {
+				var num = $('.header-container').outerHeight();
+				var screenWidth = $(window).width();
+
+				if ($(this).scrollTop() > num && screenWidth >= 320 ){
+					$(".header").addClass("sticky");
+				}
+				else{
+					$(".header").removeClass("sticky");
+				}
+			});
+		});
+    });
+</script>
+<main id="maincontent" class="page-main container"><a id="contentarea" tabindex="-1"></a>
+<div class="page-title-wrapper">
+<h1 class="page-title">
+<span class="base" data-ui-id="page-title-wrapper">Customer Login</span> </h1>
+</div>
+<div class="page messages"><div data-placeholder="messages"></div>
+<div data-bind="scope: 'messages'">
+<!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+<div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+<div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+<div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+</div>
+</div>
+<!-- /ko -->
+<!-- ko if: messages().messages && messages().messages.length > 0 -->
+<div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages">
+<div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+<div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+</div>
+</div>
+<!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "messages": {
+                            "component": "Magento_Theme/js/view/messages"
+                        }
+                    }
+                }
+            }
+    }
+</script>
+</div><div class="columns layout layout-1-col row"><div class="col-main column main col-lg-12 col-md-12 col-sm-12 col-xs-12"><input name="form_key" type="hidden" value="DlZViMkqexv0yngI" /><div id="authenticationPopup" data-bind="scope:'authenticationPopup', style: {display: 'none'}">
+<script>window.authenticationPopup = {"autocomplete":"off","customerRegisterUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/customer\/account\/create\/","customerForgotPasswordUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/customer\/account\/forgotpassword\/","baseUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/"}</script> <!-- ko template: getTemplate() --><!-- /ko -->
+<script type="text/x-magento-init">
+        {
+            "#authenticationPopup": {
+                "Magento_Ui/js/core/app": {"components":{"authenticationPopup":{"component":"Magento_Customer\/js\/view\/authentication-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"},"captcha":{"component":"Magento_Captcha\/js\/view\/checkout\/loginCaptcha","displayArea":"additional-login-form-fields","formId":"user_login","configSource":"checkout"},"amazon-button":{"component":"Amazon_Login\/js\/view\/login-button-wrapper","sortOrder":"0","displayArea":"additional-login-form-fields","config":{"tooltip":"Securely login to our website using your existing Amazon details.","componentDisabled":true}}}}}}            },
+            "*": {
+                "Magento_Ui/js/block-loader": "http\u003A\u002F\u002Fblueskytechmage.com\u002Fecofarm\u002Fpub\u002Fstatic\u002Fversion1606463929\u002Ffrontend\u002Fbs_ecofarm\u002Fbs_ecofarm1\u002Fen_US\u002Fimages\u002Floader\u002D1.gif"
+            }
+        }
+    </script>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/section-config": {
+                "sections": {"stores\/store\/switch":["*"],"stores\/store\/switchrequest":["*"],"directory\/currency\/switch":["*"],"*":["messages"],"customer\/account\/logout":["*","recently_viewed_product","recently_compared_product","persistent"],"customer\/account\/loginpost":["*"],"customer\/account\/createpost":["*"],"customer\/account\/editpost":["*"],"customer\/ajax\/login":["checkout-data","cart","captcha"],"catalog\/product_compare\/add":["compare-products"],"catalog\/product_compare\/remove":["compare-products"],"catalog\/product_compare\/clear":["compare-products"],"sales\/guest\/reorder":["cart"],"sales\/order\/reorder":["cart"],"checkout\/cart\/add":["cart","directory-data"],"checkout\/cart\/delete":["cart"],"checkout\/cart\/updatepost":["cart"],"checkout\/cart\/updateitemoptions":["cart"],"checkout\/cart\/couponpost":["cart"],"checkout\/cart\/estimatepost":["cart"],"checkout\/cart\/estimateupdatepost":["cart"],"checkout\/onepage\/saveorder":["cart","checkout-data","last-ordered-items"],"checkout\/sidebar\/removeitem":["cart"],"checkout\/sidebar\/updateitemqty":["cart"],"rest\/*\/v1\/carts\/*\/payment-information":["cart","last-ordered-items","instant-purchase"],"rest\/*\/v1\/guest-carts\/*\/payment-information":["cart"],"rest\/*\/v1\/guest-carts\/*\/selected-payment-method":["cart","checkout-data"],"rest\/*\/v1\/carts\/*\/selected-payment-method":["cart","checkout-data","instant-purchase"],"customer\/address\/*":["instant-purchase"],"customer\/account\/*":["instant-purchase"],"vault\/cards\/deleteaction":["instant-purchase"],"multishipping\/checkout\/overviewpost":["cart"],"paypal\/express\/placeorder":["cart","checkout-data"],"paypal\/payflowexpress\/placeorder":["cart","checkout-data"],"paypal\/express\/onauthorization":["cart","checkout-data"],"persistent\/index\/unsetcookie":["persistent"],"review\/product\/post":["review"],"wishlist\/index\/add":["wishlist"],"wishlist\/index\/remove":["wishlist"],"wishlist\/index\/updateitemoptions":["wishlist"],"wishlist\/index\/update":["wishlist"],"wishlist\/index\/cart":["wishlist","cart"],"wishlist\/index\/fromcart":["wishlist","cart"],"wishlist\/index\/allcart":["wishlist","cart"],"wishlist\/shared\/allcart":["wishlist","cart"],"wishlist\/shared\/cart":["cart"],"braintree\/paypal\/placeorder":["cart","checkout-data"],"braintree\/googlepay\/placeorder":["cart","checkout-data"]},
+                "clientSideSections": ["checkout-data","cart-data","chatData"],
+                "baseUrls": ["http:\/\/blueskytechmage.com\/ecofarm\/en\/"],
+                "sectionNames": ["messages","customer","compare-products","last-ordered-items","cart","directory-data","captcha","instant-purchase","loggedAsCustomer","persistent","review","wishlist","chatData","recently_viewed_product","recently_compared_product","product_data_storage","paypal-billing-agreement"]            }
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/customer-data": {
+                "sectionLoadUrl": "http\u003A\u002F\u002Fblueskytechmage.com\u002Fecofarm\u002Fen\u002Fcustomer\u002Fsection\u002Fload\u002F",
+                "expirableSectionLifetime": 60,
+                "expirableSectionNames": ["cart","persistent"],
+                "cookieLifeTime": "3600",
+                "updateSessionUrl": "http\u003A\u002F\u002Fblueskytechmage.com\u002Fecofarm\u002Fen\u002Fcustomer\u002Faccount\u002FupdateSession\u002F"
+            }
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/invalidation-processor": {
+                "invalidationRules": {
+                    "website-rule": {
+                        "Magento_Customer/js/invalidation-rules/website-rule": {
+                            "scopeConfig": {
+                                "websiteId": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "pageCache": {"url":"http:\/\/blueskytechmage.com\/ecofarm\/en\/page_cache\/block\/render\/","handles":["default","customer_account_login"],"originalRequest":{"route":"customer","controller":"account","action":"login","uri":"\/ecofarm\/en\/customer\/account\/login\/"},"versionCookieName":"private_content_version"}        }
+    }
+</script>
+<script type="text/x-magento-init">
+{
+	".quickview-product [data-role=quickview-button]": {
+		"productQuickview": {}
+	}
+}
+</script>
+<script>
+require([
+		'jquery',
+		'mage/mage',
+		'quickview/cloudzoom',
+		'quickview/bxslider'
+	], function ($) {
+	});
+</script>
+<div class="login-container"><div class="block block-customer-login">
+<div class="block-title">
+<strong id="block-customer-login-heading" role="heading" aria-level="2">Registered Customers</strong>
+</div>
+<div class="block-content" aria-labelledby="block-customer-login-heading">
+<form class="form form-login" action="#" method="post"  data-mage-init='{"validation":{}}'>
+    {% csrf_token %}
+<input name="form_key" type="hidden" value="DlZViMkqexv0yngI" /> <fieldset class="fieldset login" data-hasrequired="* Required Fields">
+<div class="field note">If you have an account, sign in with your email address.</div>
+<div class="field email required">
+<label class="label" ><span>UserName</span></label>
+<div class="control">
+<input name="username" value="" autocomplete="off"  type="text" class="input-text" title="username"  data-validate="{required:true, 'validate-email':true}">
+</div>
+</div>
+<div class="field password required">
+<label  class="label"><span>Password</span></label>
+<div class="control">
+<input name="password" type="password" autocomplete="off" class="input-text"  title="Password" data-validate="{required:true}">
+</div>
+</div>
+<div class="actions-toolbar">
+<div class="primary"><button type="submit" class="action login primary" name="send" id="send2"><span>Sign In</span></button></div>
+<div class="secondary"><a class="action remind" href="#"><span>Forgot Your Password?</span></a></div>
+</div>
+</fieldset>
+</form>
+</div>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Customer/js/block-submit-on-send": {
+                    "formId": "login-form"
+                }
+            }
+        }
+    </script>
+</div>
+<div class="block block-new-customer">
+<div class="block-title">
+<strong id="block-new-customer-heading" role="heading" aria-level="2">New Customers</strong>
+</div>
+<div class="block-content" aria-labelledby="block-new-customer-heading">
+<p>Creating an account has many benefits: check out faster, keep more than one address, track orders and more.</p>
+<div class="actions-toolbar">
+<div class="primary">
+<a href="{% url 'signup' %}" class="action create primary"><span>Create an Account</span></a>
+</div>
+</div>
+</div>
+</div>
+</div><script type="text/x-magento-init">
+    {
+        "body": {
+            "requireCookie": {"noCookieUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/cookie\/index\/noCookies\/","triggers":[".action.login"],"isRedirectCmsPage":true}        }
+    }
+</script>
+</div></div></main><footer class="page-footer"><div id="back-top" class=""><i class="fa fa-angle-double-up"></i></div>
+<div class="footer-container">
+<div class="footer-static-container">
+<div class="container">
+<div class="wrapper_footer_static">
+<div class="row">
+<div class="col-sm-12 col-md-7">
+<div class="footer_static">
+<div class="row">
+<div class="col-sm-4">
+<div class="footer-links">
+<h2 class="title">About Store</h2>
+<ul>
+<li><a href="#">About us</a></li>
+<li><a href="#">Offices</a></li>
+<li><a href="#">Work with us</a></li>
+<li><a href="#">Our policies</a></li>
+<li><a href="#">FAQs</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="footer-links">
+<h2 class="title">Top Categories</h2>
+<ul>
+<li><a href="#">TV & Video</a></li>
+<li><a href="#">Home Audio & Theater</a></li>
+<li><a href="#">Camera, Photo & Video</a></li>
+<li><a href="#">Cell Phones & Accessories</a></li>
+<li><a href="#">Headphones</a></li>
+<li><a href="#">Video Games</a></li>
+</ul>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="footer-links">
+<h2 class="title">Our Store</h2>
+<ul>
+<li><a href="#">New York</a></li>
+<li><a href="#">London SF</a></li>
+<li><a href="#">Cockfosters BP</a></li>
+<li><a href="#">Los Angeles</a></li>
+<li><a href="#">Chicago</a></li>
+<li><a href="#">Las Vegas</a></li>
+</ul>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-5">
+<div class="section-footerright">
+<div class="vela-contactinfo velaBlock">
+<div class="vela-content">
+<div class="contacinfo-phone contactinfo-item clearfix">
+<div class="d-flex"><img src="{% static 'images/logo_footer.png' %}" alt="">
+<div class="wrap"><label>Got Question? Call us 24/7!</label>
+<div class="hotline">(+91) 0000 000 000</div>
+<div class="contacinfo-address contactinfo-item "><label>Address: </label>Futura labs calicut </div>
+<div class="contacinfo-email contactinfo-item "><label>Email:</label><a href="http://blueskytechmage.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be8e4e5ffeae8ffcbf8fefbfbe4f9ffa5e8e4e6">[email&#160;protected]</a></div>
+</div>
+</div>
+</div>
+<div class="logo_payment"><img src="{% static 'images/footer_payment.png' %}" alt=""></div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6">
+<div class="copyright">
+<small class="copyright">
+<span>Copyright © <span>Ecofarm</span> all rights reserved.</span>
+</small> </div>
+</div>
+<div class="col-md-6 col-sm-6">
+<div class="footer_menu">
+<ul>
+<li><a title="Site Map" href="#" target="_self"> Site Map </a></li>
+<li><a title="Careers" href="#"> Careers</a></li>
+<li><a title="Privacy Policy" href="#">Privacy Policy</a></li>
+<li><a title="Terms of Use" href="#">Terms of Use</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="{% static 'base/js/email-decode.min.js' %}"></script><script>
+	window.onload = function () {
+		document.body.className += " preloaded";
+	}
+</script>
+</footer><script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "storage-manager": {
+                            "component": "Magento_Catalog/js/storage-manager",
+                            "appendTo": "",
+                            "storagesConfiguration" : {"recently_viewed_product":{"requestConfig":{"syncUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"recently_compared_product":{"requestConfig":{"syncUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"product_data_storage":{"updateRequestConfig":{"url":"http:\/\/blueskytechmage.com\/ecofarm\/en\/rest\/en\/V1\/products-render-info"},"requestConfig":{"syncUrl":"http:\/\/blueskytechmage.com\/ecofarm\/en\/catalog\/product\/frontend_action_synchronize\/"},"allowToSendRequest":null}}                        }
+                    }
+                }
+            }
+        }
+</script>
+<div class="ajaxsuite-popup-wrapper modals-wrapper" id="ajaxsuite-popup-wrapper">
+<a id="ajaxsuite-close" class="ajaxsuite-close"></a>
+<div id="ajaxsuite-popup-content"></div>
+</div>
+</div> </body>
+
+<!-- Mirrored from blueskytechmage.com/ecofarm/en/customer/account/login/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Dec 2020 05:27:24 GMT -->
+</html>

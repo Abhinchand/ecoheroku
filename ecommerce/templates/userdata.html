@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>User Datas</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'><link rel="stylesheet" href="{% static 'userdata/style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+<head>
+<title>Newsfeed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="…">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'userdata/style.css' %}">
+
+
+</head>
+<body>
+<!--======Pixel Grid======-->
+<div><img src="https://www.seanet.com/~owenmp/hvd-web/play-aids/grid-lg.gif" class="pixel-grid"/></div>
+<div><i id="toggle-grid" class="fa fa-th"></i></div>
+<!------------------------->
+<!--======Push Menu======-->
+<div class="container bar-cont">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 push-bar">
+          <div class="creator">
+          </div>
+        </div>
+    </div>
+
+</div>
+<!------------------------->
+<!--========Cards========-->
+<div class="container-fluid main-cont">
+    <div class="row news-row">
+
+        <div class="container-fluid col-md-12 col-sm-6 justify-content-center news-block">
+
+            <div class="card-group">
+                {% for obj in obj_list %}
+              <div class="underlay">
+
+                <div class="card">
+                    <div class="card-img-top" style="background-image: url('{{ obj.images.url }}')  "></div>
+                    <div class="card-block" >
+                        <h5 class="card-title" style="font-family: 'Anton', sans-serif">{{ obj.username }} &nbsp;{% if not obj.is_active %}<a href="{% url 'activate' id=obj.id %}" >Activate</a>{% else %} <a href="{% url 'deactivate' id=obj.id %}" >Deactivate</a>{% endif %}<hr></h5>
+                    <p class="card-text" >Name : {{ obj.first_name }}
+                        <br>Email : {{ obj.email }}
+                        <br>Address : {{ obj.address }}
+                        <br>Phone Number : {{ obj.phone_number }}
+                        <br>Pincode : {{ obj.pincode }}
+                        <br>District : {{ obj.district }}
+                        <br>Last Login : {{ obj.last_login }}
+
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+
+                </div>
+              </div>
+                    {% endfor %}
+            </div>
+            <center>
+            <a href="{% url 'view_product_admin' %}" ><button type="button">Home</button></a>
+            </center>
+        </div>
+    </div>
+</div>
+<!------------------------>
+<!--=======Scripts======-->
+<script src="jquery-3.1.1.min.js"></script>
+<script name="toggle-grid" type="text/javascript">
+$(document).ready(function(){
+  $(document).on("keypress", function(event) {
+    // If 'alt + g' keys are pressed:
+    if (event.which === 169){
+        $('#toggle-grid').toggle();
+     }
+  });
+
+  $('#toggle-grid').on("click"
+  , function() {
+      $('.pixel-grid').toggle();
+      $('#toggle-grid').toggleClass('orange');
+    });
+});
+</script>
+</body>
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script  src="{% static 'userdata/script.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+{% load static %}
+<style>
+body {
+    margin-top: 20px;
+}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>Ecofarm.com</strong>
+                        <br>
+                        Futura labs
+                        <br>
+                        Kozhikode
+                        <br>
+                        <abbr title="Phone">P:</abbr> (+91) 000-000-0000
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                    <p>
+                        <em>Date: {{date}}</em>
+                    </p>
+                    <p>
+                        <em>Receipt #: 0000015</em>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <img src="{% static 'index/images/logo_header.png'%}"  width="180" height="180">
+                    <h1>Receipt</h1>
+                </div>
+                </span>
+                <table class="table table-hover">
+
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>#</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for obj in obj_list %}
+                        {% if obj.order_id == order_id %}
+                        <tr>
+                            <td class="col-md-9"><em>{{ obj.product_name }}</em></h4></td>
+                            <td class="col-md-1" style="text-align: center"> {{ obj.quantity }} </td>
+                            <td class="col-md-1 text-center">{{ obj.price_base }}</td>
+                            <td class="col-md-1 text-center">{{ obj.price }}</td>
+                        </tr>
+                    {% endif %}
+                        {% endfor %}
+
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                            <td class="text-center text-danger"><h4><strong>{{ amt.amount }}</strong></h4></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div>
+                    <h4 style="text-align: center;">
+                        <a href="{% url 'view_product' %}">Go To Home</a><br>
+                    </h4>
+                    <h1 style="text-align:center;">
+
+                        Thank you for your order.
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+    </div>

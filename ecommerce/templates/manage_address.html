@@ -1,0 +1,82 @@
+{% extends 'userpanel.html' %}
+{% block content %}
+{% load static %}
+{% include "messages.html" %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s;
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.card-img-top {
+    width: 100%;
+    height: 14vw;
+    object-fit: cover;
+}
+.card{
+    border: none;
+}
+</style>
+
+<div class="row">
+    {% for obj in obj_list %}
+
+<div class="col-md-3 grid-margin">
+
+<div class="card-group">
+  <div class="card">
+      <div class="zoom">
+
+
+          </div>
+    <div class="card-body">
+        <center>
+            <p class="card-text"><small class="text-muted">Delivery address</small></p>
+            {% if obj.d_primary %}
+                <span>Primary address</span>
+
+            {% else%}
+                                <a href="{% url 'set_primary' id=obj.id %}">Set Primary</a>
+
+            {% endif %}
+
+      <p class="card-text">{{ obj.d_name}}</p>
+      <p class="card-text">{{ obj.d_phone_number }}</p>
+      <p class="card-text">{{ obj.d_district}}</p>
+      <p class="card-text">{{ obj.d_picode}}</p>
+      <p class="card-text">{{ obj.d_address}}</p>
+      <p class="card-text">{{ obj.d_pickup_time}}</p>
+        </center>
+        <div align="center">
+            <a href="{% url 'delete_delivery_address' id=obj.id %}"><button  >Delete</button></a>
+            <a href="{% url 'update_delivery_address' id=obj.id %}"><button  >Update</button></a>
+
+
+        </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+    <br>
+    <br>
+
+    {% endfor %}
+    <br>
+
+</div>
+
+{% endblock content%}

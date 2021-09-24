@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from . import apiview as myapi
 urlpatterns = [
     path('base', views.base,name='base'),
     path('test', views.test,name='test'),
@@ -77,6 +78,14 @@ urlpatterns = [
 
     ### searchfield ###
     path('searchfield', views.searchfield, name='searchfield'),
+
+
+
+
+
+    ##################### api ###################
+
+    path('apiview',myapi.some_view,name='some_view')
 
 ]
 

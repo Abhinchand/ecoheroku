@@ -17,6 +17,7 @@ class CustomUser(AbstractUser):
     pincode = models.IntegerField(null=True)
     district = models.CharField(max_length=50)
     type= models.IntegerField(null=True)
+    # is_apiuser = models.BooleanField()
 
 
 

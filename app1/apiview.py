@@ -37,8 +37,15 @@ def userlogin(request):
     # print(email)
 
     user = authenticate(request, username=username, password=password)
-    print(user.is_authenticated)
-    return JsonResponse(user.is_authenticated,safe=False)
+    # try:
+    #     result = user.is_authenticated
+    #     print(user.is_authenticated)
+    # except:
+    #     result = 'False'
+    data={
+    'result' :user
+    }
+    return JsonResponse(data,safe=False)
 
 
 

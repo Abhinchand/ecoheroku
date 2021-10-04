@@ -29,22 +29,28 @@ def some_view(request):
 from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def userlogin(request):
+    if request.method=='POST':
 
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-    print(username)
-    # print(email)
+        print(username)
+        # print(email)
 
-    user = authenticate(request, username=username, password=password)
-    # try:
-    #     result = user.is_authenticated
-    #     print(user.is_authenticated)
-    # except:
-    #     result = 'False'
-    data={
-    'result' :user
-    }
+        user = authenticate(request, username=username, password=password)
+    try:
+        result = user.is_authenticated
+        print(user.is_authenticated)
+        data={
+             'result' :result
+                }   
+    except:
+        
+        data={
+        'resilt':False
+        }
+    # data = json.dumps(data)
+
     return JsonResponse(data,safe=False)
 
 

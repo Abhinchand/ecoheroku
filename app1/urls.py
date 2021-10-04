@@ -85,7 +85,8 @@ urlpatterns = [
 
     ##################### api ###################
 
-    path('apiview',myapi.some_view,name='some_view')
+    path('apiview',myapi.some_view,name='some_view'),
+    path('userlogin',myapi.userlogin,name='userlogin'),
 
 ]
 

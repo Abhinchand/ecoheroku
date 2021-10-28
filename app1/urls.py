@@ -87,6 +87,9 @@ urlpatterns = [
 
     path('apiview',myapi.some_view,name='some_view'),
     path('userlogin',myapi.userlogin,name='userlogin'),
+    path('UserRegister',myapi.UserRegister,name='UserRegister'),
+    # path('delete/<int:id>/',myapi.delete,name='delete'),
+
 
 ]
 

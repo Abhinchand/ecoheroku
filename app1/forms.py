@@ -11,6 +11,10 @@ class CustomUserCreationForm(UserCreationForm):
 
 			}
 
+class apiuserform(UserCreationForm):
+    class Meta:
+        model = CustomUser
+        fields = ['username','email','password1','password2','address','phone_number']
 
 
 class Form_product(forms.ModelForm):
@@ -49,3 +53,4 @@ class Form_feedback(forms.ModelForm):
         fields = [
             'feedback_text'
         ]
+

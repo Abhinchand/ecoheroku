@@ -7,15 +7,15 @@ from django_resized import ResizedImageField
 
 
 class CustomUser(AbstractUser):
-    first_name = models.CharField(max_length=128)
-    last_name = models.CharField(max_length=128)
-    email = models.EmailField(max_length=128)
+    first_name = models.CharField(max_length=128,null=True)
+    last_name = models.CharField(max_length=128,null=True)
+    email = models.EmailField(max_length=128,null=True)
     #images = models.ImageField(upload_to='abhin/')
-    images = ResizedImageField(upload_to='uploads/%Y/%m/%d')
-    address = models.TextField(max_length=200)
+    images = ResizedImageField(upload_to='uploads/%Y/%m/%d',null=True)
+    address = models.TextField(max_length=200,null=True)
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     pincode = models.IntegerField(null=True)
-    district = models.CharField(max_length=50)
+    district = models.CharField(max_length=50,null=True)
     type= models.IntegerField(null=True)
     # is_apiuser = models.BooleanField()
 
@@ -146,6 +146,12 @@ class feedback(models.Model):
     update = models.DateTimeField(auto_now=True,auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False,auto_now_add=True)
 
+
+
+
     class Meta:
         ordering = ["-timestamp","-update"]
+
+
+
 

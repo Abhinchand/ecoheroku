@@ -34,24 +34,84 @@ def userlogin(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        print(username)
+        # print(username)
         # print(email)
 
         user = authenticate(request, username=username, password=password)
+        # print(user)
+        # print(user.images.url)
     try:
         result = user.is_authenticated
+        # status = user.is_active
         print(user.is_authenticated)
         data={
-             'result' :result
-                }   
+             'result' :{
+                 'id':user.id,
+                 'name':user.username,
+                 'email':user.email,
+
+
+                         }
+                }
     except:
         
         data={
-        'resilt':False
+        'result':False
         }
     # data = json.dumps(data)
 
     return JsonResponse(data,safe=False)
+
+
+@csrf_exempt
+def UserRegister(request):
+    result_data=None
+    if request.method=='POST':
+        form = apiuserform(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.type = 0
+            form.is_active = True
+            # form.is_active = False
+            form.save()
+            result_data=True
+
+
+        # user = authenticate(request, username=username, password=password)
+
+    if result_data:
+
+        data={
+            'result' :'True'
+        }
+    else:
+        print(list(form.errors))
+        error_data=form.errors
+        # print(type(a))
+        error_dict={}
+        for i in list(form.errors):
+            error_dict[i]=error_data[i][0]
+
+        data={
+            'resilt':False,
+            'errors':error_dict
+        }
+    # data = json.dumps(data)
+
+    return JsonResponse(data,safe=False)
+
+
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.type = 0
+            form.is_active = False
+            # form.is_active = False
+            form.save()
 
 
 

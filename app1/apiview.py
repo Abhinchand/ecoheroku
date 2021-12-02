@@ -34,9 +34,6 @@ def userlogin(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        # print(username)
-        # print(email)
-
         user = authenticate(request, username=username, password=password)
         # print(user)
         # print(user.images.url)
@@ -66,9 +63,11 @@ def userlogin(request):
 @csrf_exempt
 def UserRegister(request):
     result_data=None
+    # form = apiuserform(request.POST)
     if request.method=='POST':
         form = apiuserform(request.POST)
         if form.is_valid():
+
             form = form.save(commit=False)
             form.type = 0
             form.is_active = True

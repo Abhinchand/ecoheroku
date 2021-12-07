@@ -3,10 +3,19 @@ from django.contrib.auth.decorators import login_required
 # from django.utils import simplejson
 from django.http import HttpResponse
 from django.http import JsonResponse
+
+##################  serializer ##################
 from django.core.serializers import serialize
 from django.core import serializers
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework import serializers
+from . models import *
+from .serializer import *
 
 
+##################  end serializer ###############
 from django.http import HttpResponse
 import json
 
@@ -114,3 +123,40 @@ def signup(request):
 
 
 
+
+
+class ReactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = amount
+        fields = ['user_id', 'amount']
+
+
+class ReactView(APIView):
+
+    serializer_class = ReactSerializer
+
+    def get(self, request):
+        detail = [ {"user_id": detail.user_id,"amount": detail.amount}
+                   for detail in amount.objects.all()]
+        return Response(detail)
+
+    def post(self, request):
+
+        serializer = ReactSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return  Response(serializer.data)
+
+
+class AmountItem(APIView):
+    def get(self,request):
+        details = [{"user_id":details.user_id,"amount":details.amount} for details in amount.objects.all()]
+        return Response(details)
+
+    def post(self,request):
+        serializer = AmountSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"status":"success","data":serializer.data},status=status.HTTP_200_OK)
+        else:
+            return Response({"status":"error","data":serializer.errors},status.HTTP_400_BAD_REQUEST)

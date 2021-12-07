@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+
 from . import apiview as myapi
 urlpatterns = [
     path('base', views.base,name='base'),
@@ -89,6 +90,9 @@ urlpatterns = [
     path('userlogin',myapi.userlogin,name='userlogin'),
     path('UserRegister',myapi.UserRegister,name='UserRegister'),
     # path('delete/<int:id>/',myapi.delete,name='delete'),
+
+    path('wel', myapi.ReactView.as_view(), name="something"),
+    path('AmountItem', myapi.AmountItem.as_view(), name="AmountItem"),
 
 
 ]

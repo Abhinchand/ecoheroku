@@ -30,7 +30,7 @@ def some_view(request):
         "key1": "value1",
         "key2": "value2"
     }
-    qs_json = serializers.serialize('json', data)
+    # qs_json = serializers.serialize('json', data)
     data = s("json", data1, fields=('product_name', 'product_category','images','details','price'))
     return HttpResponse(data, content_type='application/json')
 

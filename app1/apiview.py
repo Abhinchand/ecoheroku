@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 
 ##################  serializer ##################
-from django.core.serializers import serialize
+from django.core.serializers import serialize as s
 from django.core import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -31,7 +31,7 @@ def some_view(request):
         "key2": "value2"
     }
     qs_json = serializers.serialize('json', data)
-    data = serialize("json", data1, fields=('product_name', 'product_category','images','details','price'))
+    data = s("json", data1, fields=('product_name', 'product_category','images','details','price'))
     return HttpResponse(data, content_type='application/json')
 
     # return JsonResponse(data,safe=False)

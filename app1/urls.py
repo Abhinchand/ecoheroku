@@ -80,22 +80,16 @@ urlpatterns = [
     ### searchfield ###
     path('searchfield', views.searchfield, name='searchfield'),
 
-
-
-
-
     ##################### api ###################
 
-    path('apiview',myapi.some_view,name='some_view'),
-    path('userlogin',myapi.userlogin,name='userlogin'),
-    path('UserRegister',myapi.UserRegister,name='UserRegister'),
+    path('apiview', myapi.some_view, name='some_view'),
+    path('userlogin', myapi.userlogin, name='userlogin'),
+    path('UserRegister', myapi.UserRegister, name='UserRegister'),
     # path('delete/<int:id>/',myapi.delete,name='delete'),
 
     path('wel', myapi.ReactView.as_view(), name="something"),
     path('AmountItem', myapi.AmountItem.as_view(), name="AmountItem"),
-
+    path('UserCreationApi', myapi.UserCreationApi.as_view(), name="UserCreationApi"),
+    path('UserLoginApi', myapi.UserLoginApi.as_view(), name="UserLoginApi"),
 
 ]
-
-
-

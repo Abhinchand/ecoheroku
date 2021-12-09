@@ -150,13 +150,45 @@ class ReactView(APIView):
 
 class AmountItem(APIView):
     def get(self,request):
-        details = [{"user_id":details.user_id,"amount":details.amount} for details in amount.objects.all()]
+        details = [{"user_id": details.user_id, "amount": details.amount} for details in amount.objects.all()]
         return Response(details)
 
-    def post(self,request):
+    def post(self, request):
         serializer = AmountSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"status":"success","data":serializer.data},status=status.HTTP_200_OK)
+            return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
         else:
-            return Response({"status":"error","data":serializer.errors},status.HTTP_400_BAD_REQUEST)
+            return Response({"status": "error", "data": serializer.errors}, status.HTTP_400_BAD_REQUEST)
+
+
+class UserCreationApi(APIView):
+
+    def post(self, request):
+        userdata = UserCreation(data=request.data)
+        if userdata.is_valid():
+            userdata.save()
+            return Response({"status": "success", "data": userdata.data}, status=status.HTTP_200_OK)
+        else:
+            return Response({"status": "error", "data": userdata.errors}, status.HTTP_400_BAD_REQUEST)
+
+
+class UserLoginApi(APIView):
+
+    def post(self, request):
+        # userdata =loginseialize(data=request.data)
+        d = request.POST.get('username')
+        print('gg', d)
+        if request.POST:
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            print(username)
+            print(password)
+            user = authenticate(request, username=username, password=password)
+            return Response({"status": "success", "data": [
+                {"Username": user.username,
+                 "email": user.email,
+                 "id": user.id}]}, status=status.HTTP_200_OK)
+        else:
+            return Response({"status": "error", "data": 'useename and password is invalid'},
+                            status.HTTP_400_BAD_REQUEST)

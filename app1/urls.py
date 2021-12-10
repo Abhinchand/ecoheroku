@@ -20,6 +20,9 @@ from django.conf.urls.static import static
 from . import views
 
 from . import apiview as myapi
+
+from rest_framework_simplejwt.views import TokenRefreshView
+
 urlpatterns = [
     path('base', views.base,name='base'),
     path('test', views.test,name='test'),
@@ -91,5 +94,12 @@ urlpatterns = [
     path('AmountItem', myapi.AmountItem.as_view(), name="AmountItem"),
     path('UserCreationApi', myapi.UserCreationApi.as_view(), name="UserCreationApi"),
     path('UserLoginApi', myapi.UserLoginApi.as_view(), name="UserLoginApi"),
+    ### login with token
+    # path('login1/', myapi.MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
+    # path('login2/', myapi.ViewProtect.as_view(), name='token_obtain_pair'),
+    # path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # path('haah', myapi.get_user_from_access_token_in_django_rest_framework_simplejwt, name='get_user_from_access_token_in_django_rest_framework_simplejwt'),
 
 ]
+###rest link
+#https://medium.com/django-rest/django-rest-framework-login-and-register-user-fd91cf6029d5

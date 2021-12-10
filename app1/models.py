@@ -13,7 +13,7 @@ class CustomUser(AbstractUser):
     #images = models.ImageField(upload_to='abhin/')
     images = ResizedImageField(upload_to='uploads/%Y/%m/%d',null=True)
     address = models.TextField(max_length=200,null=True)
-    phone_number = PhoneNumberField(null=False, blank=False, unique=True)
+    phone_number = PhoneNumberField(null=False, blank=False)
     pincode = models.IntegerField(null=True)
     district = models.CharField(max_length=50,null=True)
     type= models.IntegerField(null=True)

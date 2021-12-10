@@ -20,12 +20,24 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 from django.conf.urls import url
+
+
+# from reviews.views import ProductViewSet, ImageViewSet
+# from rest_framework.routers import DefaultRouter
+#
+#
+#
+# router = DefaultRouter()
+# router.register(r'product', ProductViewSet, basename='Product')
+# router.register(r'image', ImageViewSet, basename='Image')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app1.urls')),
     path('accounts',include('django.contrib.auth.urls')),
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
 ]
 
 

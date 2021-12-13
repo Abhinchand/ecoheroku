@@ -21,7 +21,7 @@ from . import views
 
 from . import apiview as myapi
 
-from rest_framework_simplejwt.views import TokenRefreshView
+# from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
     path('base', views.base,name='base'),
@@ -94,6 +94,7 @@ urlpatterns = [
     path('AmountItem', myapi.AmountItem.as_view(), name="AmountItem"),
     path('UserCreationApi', myapi.UserCreationApi.as_view(), name="UserCreationApi"),
     path('UserLoginApi', myapi.UserLoginApi.as_view(), name="UserLoginApi"),
+    path('Product_api', myapi.Product.as_view(), name="Product_api"),
     ### login with token
     # path('login1/', myapi.MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
     # path('login2/', myapi.ViewProtect.as_view(), name='token_obtain_pair'),

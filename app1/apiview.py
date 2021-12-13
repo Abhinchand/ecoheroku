@@ -188,8 +188,8 @@ class UserLoginApi(APIView):
                             status.HTTP_400_BAD_REQUEST)
 
 
-from rest_framework.permissions import AllowAny
-from rest_framework_simplejwt.views import TokenObtainPairView
+# from rest_framework.permissions import AllowAny
+# from rest_framework_simplejwt.views import TokenObtainPairView
 
 ###for login with access tocken
 # class MyObtainTokenPairView(TokenObtainPairView):
@@ -224,3 +224,28 @@ class ViewProtect(APIView):
         token_user_email = request.user.email
         token_user_username = request.user.username
         pass
+
+
+class Product(APIView):
+    def get(self, request):
+        details = [{"id": details.id,
+                    "product_name": details.product_name,
+                    "product_category": details.product_category,
+                    "price": details.price,
+                    "images": details.images.url,
+                    "details": details.details,
+                    "created": details.created_by.username} for details in product.objects.all()]
+        return Response(details)
+
+    def post(self, request):
+        serializer = ProductAdd(data=request.data)
+        # id=request.POST.get("id")
+        # print(id)
+        # user =CustomUser.objects.get(id=id)
+        if serializer.is_valid():
+            # serializer=serializer.save(commit=False)
+            # serializer.created_by = user
+            serializer.save()
+            return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
+        else:
+            return Response({"status": "error", "data": serializer.errors}, status.HTTP_400_BAD_REQUEST)

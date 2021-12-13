@@ -107,11 +107,35 @@ class RegisterSerializer(serializers.ModelSerializer):
             phone_number=validated_data['phone_number']
         )
 
-
         user.set_password(validated_data['password1'])
         user.save()
 
         return user
+
+
+class ProductAdd(serializers.ModelSerializer):
+    id = serializers.IntegerField()
+
+    class Meta:
+        model = product
+        fields = ('id', 'product_name', 'product_category', 'images', 'details', 'price')
+
+        def create(self, validated_data):
+            id = validated_data['id']
+            userdata = CustomUser.objects.get(id=id)
+            productdata = product.objects.create(
+                product_name=validated_data['product_name'],
+                priduct_category=validated_data['priduct_category'],
+                price=validated_data['price'],
+                details=validated_data['details'],
+                images=validated_data['images'],
+                created_by=userdata
+            )
+
+            productdata.set_password(validated_data['password1'])
+            productdata.save()
+
+            return productdata
 
 ###########for login with token
 # from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
